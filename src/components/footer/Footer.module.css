@@ -1,0 +1,9 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    color: var(--color-gray);
+}
