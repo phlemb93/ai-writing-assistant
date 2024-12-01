@@ -4,11 +4,13 @@ import styles from './History.module.css'
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useState } from 'react';
-
+import { useChatsContext } from '@/contexts/chatsContext';
 
 const History = () => {
+    const {chats, deleteChat} = useChatsContext();
+    const [open, setOpen] = useState(false);
 
-  const [open, setOpen] = useState(false);
+    console.log(chats)
     
   return (
     <div className={styles.mainContainer}>
@@ -20,23 +22,15 @@ const History = () => {
             </div>
             
         </header>
-        <section className={styles.contentsContainer} style={open ? {display: 'flex'} : {display: 'none'}}>
-            <div className={styles.content}>
-                <p className={styles.text}>Lorem, ipsum dolor sit amet consectetur...</p>
-                <AiOutlineDelete className={styles.deleteIcon} />
-            </div>
-            <div className={styles.content}>
-                <p className={styles.text}>Lorem, ipsum dolor sit amet consectetur...</p>
-                <AiOutlineDelete className={styles.deleteIcon} />
-            </div>
-            <div className={styles.content}>
-                <p className={styles.text}>Lorem, ipsum dolor sit amet consectetur...</p>
-                <AiOutlineDelete className={styles.deleteIcon} />
-            </div>
-            <div className={styles.content}>
-                <p className={styles.text}>Lorem, ipsum dolor sit amet consectetur...</p>
-                <AiOutlineDelete className={styles.deleteIcon} />
-            </div>
+        <section className={styles.contentsContainer} style={open ? {display: 'flex', flexDirection: 'column'} : {display: 'none'}}>
+            {
+                chats.map((chat, index) => (
+                    <div className={styles.content} key={index}>
+                        <p className={styles.text}>{chat.message}</p>
+                        <AiOutlineDelete className={styles.deleteIcon} onClick={() => deleteChat(chat.id)} />
+                    </div>
+                ))
+            }
         </section>
     </div>
   )
