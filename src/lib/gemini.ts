@@ -1,3 +1,5 @@
+'use server'
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
@@ -9,6 +11,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
 export const genAIPromptResponse = async (tone:string, len:string, userInput:string) => {
+    
     try {
         const prompt = `Rewrite the following sentence in a ${tone} tone, making it ${len}:
         ${userInput}`;
@@ -23,7 +26,7 @@ export const genAIPromptResponse = async (tone:string, len:string, userInput:str
 }
 export const genAIExplainResult = async (question:string, answer:string) => {
     try {
-        const prompt = `Concisely, explain how this ${answer} version is better than this other one; ${question}.`;
+        const prompt = `Briefly explain how this ${answer} version is better than this; ${question}.`;
         const result = await model.generateContent(prompt);
         const response = await result.response;
         return response.text();

@@ -4,13 +4,13 @@ import { createContext, useReducer, ReactNode, useContext, useState } from 'reac
 import { v4 as uuidv4 } from 'uuid';
 
 
-interface Chat {
+type Chat = {
     id: string; 
     message: string;
     response: string;
 }
 
-interface State {
+type State = {
     chats: Chat[];
 }
 
@@ -19,7 +19,8 @@ type ChatsContext = {
     addChat: (message: string, response: string) => void;
     deleteChat: (id: string) => void;
     isNewChat: boolean;
-    handleIsNewChat: () => void
+    handleIsNewChat: () => void;
+    handleDownloadHistory: () => void;
 }
 
 type Action =
@@ -47,7 +48,6 @@ const chatsReducer = (state: State, action: Action): State => {
 
 export const ChatsContext = createContext({} as ChatsContext);
 
-
 export const ChatsProvider = ({ children }: { children: ReactNode }) => {
     const [state, dispatch] = useReducer(chatsReducer, initialState);
     const [isNewChat, setIsNewChat] = useState(false);
@@ -65,8 +65,21 @@ export const ChatsProvider = ({ children }: { children: ReactNode }) => {
         dispatch({ type: 'DELETE_CHAT', payload: id });
     };
 
+    const handleDownloadHistory = () => {
+        const historyText = state.chats.map(chat => `User: ${chat.message}\nAI: ${chat.response}\n`).join('\n');
+        const blob = new Blob([historyText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'chat_history.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url); 
+    };
+
     return (
-        <ChatsContext.Provider value={{ chats: state.chats, addChat, deleteChat, isNewChat, handleIsNewChat }}>
+        <ChatsContext.Provider value={{ chats: state.chats, addChat, deleteChat, isNewChat, handleIsNewChat, handleDownloadHistory }}>
             {children}
         </ChatsContext.Provider>
     );

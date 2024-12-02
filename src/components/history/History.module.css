@@ -22,7 +22,6 @@
     }
 
     .contentsContainer{
-        border: 1px solid var(--color-gray);
         border-top: none;
         border-bottom: none;
         width: 100%;
@@ -34,18 +33,43 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            border-bottom: 1px solid var(--color-gray);
+            border: 1px solid var(--color-gray);
             height: 80px;
 
-            .text{
-                font-size: 1.2rem;
-                font-weight: 500;
+            .textContainer{
+                .text{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+                }
+    
+                .response {
+                    font-size: 0.875rem;
+                    color: var(--color-gray)
+                }
             }
 
             .deleteIcon{
-                color: rgb(198, 1, 1);
+                color: var(--color-delete);
                 font-size: 1.5rem;
                 cursor: pointer;
+            }
+        }
+
+        .downloadButton {
+            cursor: pointer;
+            border: 2px solid var(--secondary);
+            padding: 1rem;
+            background-color: var(--color-gray-200);
+            color: var(--secondary);
+            width: 300px;
+            align-self: center;
+            font-size: 1rem;
+            margin-top: 2rem;
+
+            &:hover{
+                transform: translateY(2px);
+                opacity: 0.8;
             }
         }
     }

@@ -3,8 +3,9 @@
   --foreground: #171717;
   --bg: #141414;
   --text: #ffffff;
-  --primary: #FE74F3;
-  --secondary: #FF9870;
+  --primary: #7d0072;
+  --secondary: #ff7b47;
+  --color-delete: rgb(198, 1, 1);
   --color-gray: gray;
   --color-gray-100: rgba(128, 128, 128, 0.1);
   --color-gray-200: rgba(128, 128, 128, 0.2);

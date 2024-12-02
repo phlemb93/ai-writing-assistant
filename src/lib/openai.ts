@@ -1,5 +1,6 @@
-import axios from 'axios';
+'use server'
 
+import axios from 'axios';
 
 export const fetchRequest = async () => {
     try {
@@ -12,11 +13,10 @@ export const fetchRequest = async () => {
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` 
+                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}` 
                 }
             }
         );
-
         return response.data; 
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
