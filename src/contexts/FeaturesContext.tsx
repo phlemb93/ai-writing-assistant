@@ -37,6 +37,7 @@ export const FeaturesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         const prompt = promptRef.current?.value || '';
         setPrompt(prompt);
         setError(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
 
         try {
             const result = await genAIPromptResponse(features.tone, features.len, prompt);
@@ -52,6 +53,7 @@ export const FeaturesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     const handleExplain = async () => {
         if (response) {
+            window.scrollTo({top: 100, behavior: 'smooth' }); 
             setError(null); 
             try {
                 const result = await genAIExplainResult(prompt, response);

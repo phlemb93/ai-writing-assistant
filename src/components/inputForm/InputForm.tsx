@@ -31,9 +31,12 @@ useEffect(() => {
             }
 
             { response && 
+            <>
+                <h3>AI Writer</h3>
                 <div className={`${styles.text} ${styles.botText}`}>
                     <p>{response}</p>
                 </div> 
+            </>
             }
 
             { explanation &&
