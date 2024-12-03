@@ -13,7 +13,7 @@ const History = () => {
     return (
         <div className={styles.mainContainer}>
             <header className={styles.header} onClick={() => setOpen(!open)}>
-                <h2>Previous Chats</h2>
+                <h3>Previous Chats</h3>
                 <div>
                     { open ? <RiArrowDropUpLine className={styles.icon} />
                      : <RiArrowDropDownLine className={styles.icon} /> }

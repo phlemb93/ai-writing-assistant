@@ -6,8 +6,8 @@
     width: 100%;
     max-width: 1024px;
     height: calc(100vh - 240px);
-    margin-top: 245px;
-    margin-bottom: 3.125rem;
+    margin-top: 260px;
+    margin-bottom: 2.5rem;
     padding: 1rem;
 
     .contentContainer{
@@ -28,7 +28,7 @@
             align-items: center;
             border-radius: 50px;
             padding: 1rem 2rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         
         .userText{
@@ -116,6 +116,6 @@
 
 @media screen and (width <= 768px){
     .mainContainer{
-        margin-top: 285px;
+        margin-top: 300px;
     }
 }
