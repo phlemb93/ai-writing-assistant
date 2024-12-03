@@ -21,6 +21,7 @@ export const genAIPromptResponse = async (tone:string, len:string, userInput:str
         
     } catch (error) {
         console.log(error)
+        throw error;
     }
    
 }
@@ -33,6 +34,7 @@ export const genAIExplainResult = async (question:string, answer:string) => {
         
     } catch (error) {
         console.log(error)
+        throw error;
     }
    
 }

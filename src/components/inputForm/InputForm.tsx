@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './InputForm.module.css'
-import { AiOutlineSend } from "react-icons/ai";
 import { useEffect } from 'react';
 import { useFeaturesContext } from '@/contexts/FeaturesContext';
 

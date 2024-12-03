@@ -27,9 +27,17 @@ type Action =
     | { type: 'ADD_CHAT'; payload: Chat }
     | { type: 'DELETE_CHAT'; payload: string };
 
-const initialState: State = {
-    chats: JSON.parse(localStorage.getItem('chats')!) || []
+
+let initialState: State = {
+    chats: []
 };
+
+if (typeof window !== 'undefined') {
+    initialState = {
+        chats: JSON.parse(localStorage.getItem('chats')!) || []
+    };
+}
+
 
 const chatsReducer = (state: State, action: Action): State => {
     switch (action.type) {
