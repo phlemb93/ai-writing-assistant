@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Writing Assistant
 
-## Getting Started
+A simple writing assistant that leverages an AI text-generation API to help users improve or rewrite sentences.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Generate AI-based text responses.
+- Explain AI-generated responses.
+- Download chat history as a `.txt` file.
+- Manage chat history and delete functionalities.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Prerequisites
 
-## Learn More
+Before you begin, ensure you have met the following requirements:
 
-To learn more about Next.js, take a look at the following resources:
+- **Node.js**: You need Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
+- **npm or Yarn**: Ensure you have npm or Yarn installed for package management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the Repository**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/phlemb93/ai-writing-assistant.git
+   cd ai-writing-assistant
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install Dependencies**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn install
+   ```
+
+3. **Environment Variables**
+
+   Create a `.env.local` file in the root directory and add your environment variables. For example:
+
+   ```plaintext
+   NEXT_PUBLIC_API_KEY=your_api_key_here
+   ```
+
+## Usage
+
+1. **Run the Development Server**
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+2. **Interacting with the Application**
+
+   - Enter text in the input field to generate AI responses.
+   - Use the "Rewrite" button to submit your text.
+   - View and manage your chat history.
+   - Download your chat history as a `.txt` file.
+
+## Deployment
+
+To deploy the application, you can use platforms like Vercel, Netlify, or any other hosting service that supports Next.js applications.
+
+1. **Build the Application**
+
+   Using npm:
+
+   ```bash
+   npm run build
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn build
+   ```
+
+2. **Start the Production Server**
+
+   Using npm:
+
+   ```bash
+   npm start
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn start
+   ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a pull request.
+
