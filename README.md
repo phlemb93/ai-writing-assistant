@@ -10,7 +10,6 @@ A simple writing assistant that leverages an AI text-generation API to help user
 - [Usage](#usage)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
