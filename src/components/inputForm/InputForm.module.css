@@ -84,7 +84,7 @@
             width: 100%;
             max-height: 300px;
             position: relative;
-            border: 2px solid var(--color-gray);
+            border: 1px solid var(--color-gray);
             border-radius: 50px;
             display: flex;
             overflow: hidden;
