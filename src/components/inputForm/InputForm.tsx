@@ -22,7 +22,7 @@ useEffect(() => {
   return (
     <div className={styles.mainContainer}>
         <div className={styles.contentContainer}>
-        {error && <div className="error-message">{error}</div>}
+        { error && <div className={styles.errorMsg}>{error}</div> }
             { prompt && 
                 <div className={`${styles.text} ${styles.userText}`}>
                     <p>{prompt}</p>
